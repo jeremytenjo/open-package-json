@@ -18,8 +18,7 @@
     "template"
   ],
   "activationEvents": [
-    "onCommand:openPackageJson.generateCode",
-    "onCommand:openPackageJson.generateCodeInFolder"
+    "onCommand:openPackageJson.openPackageJson"
   ],
   "main": "./out/index.js",
   "scripts": {
@@ -44,11 +43,6 @@
         "title": "Open package.json"
       }
     ]
-  },
-  "dependencies": {
-    "change-case": "^4.1.2",
-    "lower-case": "^2.0.2",
-    "prettier": "^2.3.0"
   },
   "devDependencies": {
     "@types/glob": "^7.1.3",

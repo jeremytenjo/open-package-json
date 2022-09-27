@@ -1,6 +1,5 @@
 const vscode = require('vscode')
-const generateCode = require('./commands/generateCodeCommand')
-const generateCodeInFolder = require('./commands/generateCodeInFolder')
+const openPackageJson = require('./commands/openPackageJsonCommand')
 const pkgJson = require('../package.json')
 
 /**
@@ -11,13 +10,7 @@ function activate(context) {
   console.log(`${pkgJson.name} activated!`)
 
   context.subscriptions.push(
-    vscode.commands.registerCommand('openPackageJson.generateCode', generateCode),
-  )
-
-  context.subscriptions.push(
-    vscode.commands.registerCommand('openPackageJson.generateCodeInFolder', () =>
-      generateCodeInFolder(context),
-    ),
+    vscode.commands.registerCommand('openPackageJson.openPackageJson', openPackageJson),
   )
 }
 
