@@ -3,7 +3,7 @@
   "displayName": "Open package.json",
   "description": "Open package.json, no more, no less",
   "publisher": "tenjojeremy",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "engines": {
     "vscode": "^1.55.0"
   },
