@@ -1,0 +1,65 @@
+{
+  "name": "open-package-json",
+  "displayName": "Open package.json",
+  "description": "Open package.json, no more, no less",
+  "publisher": "tenjojeremy",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.55.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "generator",
+    "component",
+    "react",
+    "vue",
+    "template"
+  ],
+  "activationEvents": [
+    "onCommand:openPackageJson.generateCode",
+    "onCommand:openPackageJson.generateCodeInFolder"
+  ],
+  "main": "./out/index.js",
+  "scripts": {
+    "dev": "npm run -S build -- --sourcemap --watch",
+    "build": "esbuild ./src/index.ts --bundle --outfile=out/index.js --external:vscode --format=cjs --platform=node",
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "prettify": "prettier --write '{**/*,*}.{js,jsx,json}'",
+    "deploy": "npm run publish",
+    "publish": "vsce publish",
+    "vscode:prepublish": "npm run -S build -- --minify"
+  },
+  "icon": "assets/images/logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeremytenjo/open-package-json"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "openPackageJson.openPackageJson",
+        "title": "Open package.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "change-case": "^4.1.2",
+    "lower-case": "^2.0.2",
+    "prettier": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.55.0",
+    "esbuild": "^0.12.3",
+    "eslint": "^7.19.0",
+    "glob": "^7.1.7",
+    "mocha": "^8.2.1",
+    "typescript": "^4.1.3",
+    "vscode-test": "^1.5.0"
+  }
+}

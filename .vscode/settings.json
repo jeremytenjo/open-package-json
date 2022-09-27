@@ -1,0 +1,4 @@
+{
+  "openPackageJson.schemaFilePath": "test/app/superCodeGen.schema.js",
+  "openPackageJson.prettierConfigFilePath": "test/app/.prettierrc.js"
+}
